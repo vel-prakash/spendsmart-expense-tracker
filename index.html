@@ -12,7 +12,7 @@
         <div>
             <h1>SpendSmart</h1>
             <p>Track your money, manage your spending.</p>
-            <p class="month">Monthly Overview: <span id="monthLabel"></span></p>
+            <p>Monthly Overview: This Month</p>
         </div>
 
         <label>
@@ -22,7 +22,6 @@
     </header>
 
     <div class="cards">
-
         <div class="card">
             <p>Total Spending</p>
             <h2 id="spent">₹0.00</h2>
@@ -40,7 +39,6 @@
             <h2 id="left">₹0.00</h2>
             <p id="warning"></p>
         </div>
-
     </div>
 
     <div class="box">
@@ -85,8 +83,6 @@
         <h2>Your Expenses</h2>
 
         <div class="tools">
-            <input type="text" id="search" placeholder="Search expenses">
-
             <select id="filter">
                 <option value="">All Categories</option>
                 <option>Food</option>
@@ -103,15 +99,12 @@
                 <option value="high">Amount: High to Low</option>
                 <option value="low">Amount: Low to High</option>
             </select>
-
-            <button type="button" id="reset" class="secondary">Reset</button>
         </div>
 
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Amount</th>
                         <th>Category</th>
@@ -119,7 +112,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-
                 <tbody id="rows"></tbody>
             </table>
         </div>
@@ -143,8 +135,7 @@
         <p>Convert this month's spending from INR to USD.</p>
 
         <button type="button" id="convert">Convert to USD</button>
-
-        <p id="usd"></p>
+        <p id="result"></p>
     </div>
 
     <footer>

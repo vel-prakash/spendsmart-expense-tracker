@@ -9,20 +9,24 @@ body {
     font-family: Arial, sans-serif;
 }
 
+h1, h2 {
+    color: #24466d;
+}
+
 .head {
     background: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-}
-
-h1, h2 {
-    color: #24466d;
+    gap: 20px;
 }
 
 .head label {
     width: 220px;
+    display: flex;
+    flex-direction: column;
 }
 
 input, select {
@@ -30,9 +34,6 @@ input, select {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-input, select {
     max-width: 100%;
 }
 
@@ -56,8 +57,8 @@ button:hover, .file:hover {
 .cards {
     display: flex;
     gap: 15px;
-    margin: 20px auto;
     width: 90%;
+    margin: 20px auto;
 }
 
 .card, .box, .panel {
@@ -84,12 +85,18 @@ button:hover, .file:hover {
 }
 
 #form label {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     min-width: 120px;
 }
 
-.tools input {
-    flex: 1;
+#form input, #form select {
+    width: 100%;
+}
+
+.table-wrap {
+    overflow-x: auto;
 }
 
 table {
@@ -108,13 +115,6 @@ th {
     background: #edf3f8;
 }
 
-.pill {
-    background: #d9f0eb;
-    color: #176c64;
-    padding: 5px;
-    border-radius: 10px;
-}
-
 .delete, .red {
     background: #d9535d;
 }
@@ -127,11 +127,15 @@ th {
     display: none;
 }
 
-#warning, .delete {
+#warning {
+    color: #d9535d;
+}
+
+.delete {
     color: white;
 }
 
-#message, #usd {
+#message, #result {
     color: #16877f;
 }
 
@@ -144,7 +148,7 @@ th {
         flex-direction: column;
     }
 
-    #form label {
+    .head label {
         width: 100%;
     }
 }
