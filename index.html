@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="head">
+        <div>
+            <h1>SpendSmart</h1>
+            <p>Track your money, manage your spending.</p>
+            <p class="month">Monthly Overview: <span id="monthLabel"></span></p>
+        </div>
+
+        <label>
+            Monthly Budget (₹)
+            <input type="number" id="budget" min="0" placeholder="Enter budget">
+        </label>
+    </header>
+
+    <div class="cards">
+
+        <div class="card">
+            <p>Total Spending</p>
+            <h2 id="spent">₹0.00</h2>
+            <p>This month</p>
+        </div>
+
+        <div class="card">
+            <p>Number of Expenses</p>
+            <h2 id="count">0</h2>
+            <p>This month</p>
+        </div>
+
+        <div class="card">
+            <p>Remaining Budget</p>
+            <h2 id="left">₹0.00</h2>
+            <p id="warning"></p>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <h2>Add Expense</h2>
+
+        <form id="form">
+            <label>
+                Expense Name
+                <input type="text" id="name" placeholder="Enter expense name" required>
+            </label>
+
+            <label>
+                Amount (₹)
+                <input type="number" id="amount" min="1" placeholder="Enter amount" required>
+            </label>
+
+            <label>
+                Category
+                <select id="category" required>
+                    <option value="">Choose Category</option>
+                    <option>Food</option>
+                    <option>Travel</option>
+                    <option>Shopping</option>
+                    <option>Education</option>
+                    <option>Bills</option>
+                    <option>Other</option>
+                </select>
+            </label>
+
+            <label>
+                Date
+                <input type="date" id="date" required>
+            </label>
+
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <div class="panel">
+        <h2>Your Expenses</h2>
+
+        <div class="tools">
+            <input type="text" id="search" placeholder="Search expenses">
+
+            <select id="filter">
+                <option value="">All Categories</option>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Shopping</option>
+                <option>Education</option>
+                <option>Bills</option>
+                <option>Other</option>
+            </select>
+
+            <select id="sort">
+                <option value="new">Newest First</option>
+                <option value="old">Oldest First</option>
+                <option value="high">Amount: High to Low</option>
+                <option value="low">Amount: Low to High</option>
+            </select>
+
+            <button type="button" id="reset" class="secondary">Reset</button>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="rows"></tbody>
+            </table>
+        </div>
+
+        <p id="empty">No expenses added yet.</p>
+
+        <div class="buttons">
+            <button type="button" id="export">Export JSON</button>
+
+            <label class="file">
+                Import JSON
+                <input type="file" id="import" accept=".json">
+            </label>
+
+            <button type="button" id="clear" class="red">Clear All</button>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>Currency Converter</h2>
+        <p>Convert this month's spending from INR to USD.</p>
+
+        <button type="button" id="convert">Convert to USD</button>
+
+        <p id="usd"></p>
+    </div>
+
+    <footer>
+        <p>SpendSmart | Track better. Spend smarter.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
